@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MudServer.Entities
+namespace MudServer
 {
-    class Location : IComponent
+    class Location
     {
-
+        public long RoomID { get; set; }
     }
 }
