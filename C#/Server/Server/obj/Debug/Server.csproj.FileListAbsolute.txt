@@ -9,3 +9,9 @@ C:\Users\student-eac\Desktop\Portfolio\C#\Server\Server\obj\Debug\Server.pdb
 C:\Users\student-eac\Desktop\Portfolio\C#\Server\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
 C:\Users\student-eac\Desktop\Portfolio\C#\Server\Server\bin\Debug\Server.exe
 C:\Users\student-eac\Desktop\Portfolio\C#\Server\Server\bin\Debug\Server.pdb
+C:\Users\tsimmons15\Desktop\Portfolio\C#\Server\Server\bin\Debug\Server.exe.config
+C:\Users\tsimmons15\Desktop\Portfolio\C#\Server\Server\obj\Debug\Server.exe
+C:\Users\tsimmons15\Desktop\Portfolio\C#\Server\Server\obj\Debug\Server.pdb
+C:\Users\tsimmons15\Desktop\Portfolio\C#\Server\Server\bin\Debug\Server.exe
+C:\Users\tsimmons15\Desktop\Portfolio\C#\Server\Server\bin\Debug\Server.pdb
+C:\Users\tsimmons15\Desktop\Portfolio\C#\Server\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache

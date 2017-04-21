@@ -2,6 +2,7 @@
 using System.IO;
 using MudServer;
 using MudServer.Server_Comm;
+using MudServer.Properties;
 
 namespace MudBuild
 {
@@ -9,7 +10,7 @@ namespace MudBuild
     {
         public static string GetLocalIPAddress()
         {
-            string IP = "127.0.0.1";
+            string IP = (Settings.Default.IPAddr != "") ? Settings.Default.IPAddr : "127.0.0.1";
             //TODO: Change this to a DB accessed field
             string path = Path.Combine(Directory.GetCurrentDirectory(), "Data", "IP.txt");
             if (File.Exists(path))
