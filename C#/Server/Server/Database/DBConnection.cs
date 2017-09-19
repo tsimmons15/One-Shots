@@ -1,44 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+
+using System.Data.SQLite;
+using System.IO;
 
 namespace MudServer.Database
 {
     class DBConnection
     {
-        /*
-            string dbName = "FooDatabase.sdf";
-            string pswd = "SomePassword";
-            string connStr = "Data Source = " + dbName + " ; Password = " + pswd;
-
-            if (File.Exists("FooDatabase.sdf"))
-                File.Delete("FooDatabase.sdf");
-
-            SqlCeEngine engine = new SqlCeEngine(connStr);
-            engine.CreateDatabase();
-
-            SqlCeConnection conn = null;
-
+        private static string dbPath = "file.dat";
+        private static string connString = "Data Source=" + dbPath + "; Version=3; FailIfMissing=True; Foreign Keys=True;";
+        
+        public static SQLiteConnection ConnectDB()
+        {
+            SQLiteConnection conn = null;
 
             try
             {
-                conn = new SqlCeConnection(connStr);
-                conn.Open();
+                if (!File.Exists(dbPath))
+                {
+                    /*SQLiteConnection.CreateFile(...) works, whereas File.Create(...) does not*/
+                    SQLiteConnection.CreateFile(dbPath);
+                }
+                conn = new SQLiteConnection(connString);
+            }
+            catch (IOException ioe)
+            {
+                Console.WriteLine(ioe);
+                conn = null;
+            }
+            catch (SQLiteException se)
+            {
+                Console.WriteLine(se);
+                conn = null;
+            }
 
-                SqlCeCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "CREATE TABLE FooTable(col1 int, col2 ntext)";
-                cmd.ExecuteNonQuery();
-            }
-            catch
-            {
-                Console.WriteLine("Error caught...");
-            }
-            finally
-            {
-                conn.Close();
-            }
-            */
+            return conn;
+        }
     }
 }

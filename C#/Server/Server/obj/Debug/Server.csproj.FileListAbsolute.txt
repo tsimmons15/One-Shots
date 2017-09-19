@@ -15,3 +15,11 @@ C:\Users\tsimmons15\Desktop\Portfolio\C#\Server\Server\obj\Debug\Server.pdb
 C:\Users\tsimmons15\Desktop\Portfolio\C#\Server\Server\bin\Debug\Server.exe
 C:\Users\tsimmons15\Desktop\Portfolio\C#\Server\Server\bin\Debug\Server.pdb
 C:\Users\tsimmons15\Desktop\Portfolio\C#\Server\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\student-eac\Desktop\Portfolio\C#\Server\Server\bin\Debug\EntityFramework.dll
+C:\Users\student-eac\Desktop\Portfolio\C#\Server\Server\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\student-eac\Desktop\Portfolio\C#\Server\Server\bin\Debug\System.Data.SQLite.dll
+C:\Users\student-eac\Desktop\Portfolio\C#\Server\Server\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\student-eac\Desktop\Portfolio\C#\Server\Server\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\student-eac\Desktop\Portfolio\C#\Server\Server\bin\Debug\EntityFramework.xml
+C:\Users\student-eac\Desktop\Portfolio\C#\Server\Server\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\student-eac\Desktop\Portfolio\C#\Server\Server\bin\Debug\System.Data.SQLite.xml

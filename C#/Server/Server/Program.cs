@@ -3,6 +3,7 @@ using System.IO;
 using MudServer;
 using MudServer.Server_Comm;
 using MudServer.Properties;
+using MudServer.Database;
 
 namespace MudBuild
 {
@@ -32,6 +33,8 @@ namespace MudBuild
             Miscellaneous.server.StartServer();
 
             Console.WriteLine("Started");
+
+            DBConnection.ConnectDB();
 
             while (Miscellaneous.server.IsListening)
             {
