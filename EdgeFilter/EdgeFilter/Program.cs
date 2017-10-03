@@ -16,11 +16,13 @@ namespace EdgeFilter
 
             Mat capturedImg = capture.QueryFrame();
 
-            capturedImg.Save("C:\\Users\\student-eac\\Desktop\\img.jpg");
+            capturedImg.Save("Original.jpg");
 
             EdgeFilter.UseAverage = false;
             EdgeFilter.Threshold = .9;
+            EdgeFilter.Smooth = true;
             EdgeFilter.FilterImage(capturedImg);
+            
             Console.ReadKey();
         }
     }

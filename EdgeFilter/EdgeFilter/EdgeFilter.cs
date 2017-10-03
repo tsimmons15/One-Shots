@@ -72,6 +72,12 @@ namespace EdgeFilter
             get; set;
         }
 
+        public static Boolean Smooth
+        {
+            get;
+            set;
+        }
+
         public static void FilterImage(Mat img)
         {
             OriginalImage = img.ToImage<Gray, Byte>();
@@ -207,11 +213,15 @@ namespace EdgeFilter
                     FilteredImage.Data[i, j, 0] = (byte)((OriginalImage.Data[i, j, 0] < threshold) ? 255 : 0);
                 }
             }
-
+            FilteredImage.Save("Filtered.jpg");
             Console.WriteLine("End filtering...\n");
 
-            OriginalImage.Save("Test-Original.jpg");
-            FilteredImage.Save("Test-Filtered.jpg");
+            CvInvoke.PyrUp(FilteredImage, FilteredImage, Emgu.CV.CvEnum.BorderType.Default);
+            CvInvoke.PyrDown(FilteredImage, FilteredImage, Emgu.CV.CvEnum.BorderType.Default);
+
+            Console.WriteLine("End smoothing...\n");
+
+            FilteredImage.Save("Smoothed.jpg");
         }
     }
 }
