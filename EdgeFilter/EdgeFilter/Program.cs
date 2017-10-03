@@ -18,8 +18,10 @@ namespace EdgeFilter
 
             capturedImg.Save("C:\\Users\\student-eac\\Desktop\\img.jpg");
 
+            EdgeFilter.UseAverage = false;
+            EdgeFilter.Threshold = .9;
             EdgeFilter.FilterImage(capturedImg);
-
+            Console.ReadKey();
         }
     }
 }
