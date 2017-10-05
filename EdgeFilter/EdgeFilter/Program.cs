@@ -10,7 +10,7 @@ namespace EdgeFilter
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Test(string[] args)
         {
             VideoCapture capture = new VideoCapture(0);
 
@@ -21,6 +21,7 @@ namespace EdgeFilter
             EdgeFilter.UseAverage = false;
             EdgeFilter.Threshold = .9;
             EdgeFilter.Smooth = true;
+            EdgeFilter.OutOfBoundMask = 10;
             EdgeFilter.FilterImage(capturedImg);
             
             Console.ReadKey();
