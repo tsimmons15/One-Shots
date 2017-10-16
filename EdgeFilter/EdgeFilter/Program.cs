@@ -10,20 +10,34 @@ namespace EdgeFilter
 {
     class Program
     {
-        static void Test(string[] args)
+        static void Main(string[] args)
+        {
+            PastelTest();
+        }
+
+        static void PastelTest()
         {
             VideoCapture capture = new VideoCapture(0);
 
-            Mat capturedImg = capture.QueryFrame();
+            Mat capturedImg;
 
-            capturedImg.Save("Original.jpg");
 
-            EdgeFilter.UseAverage = false;
-            EdgeFilter.Threshold = .9;
-            EdgeFilter.Smooth = true;
-            EdgeFilter.OutOfBoundMask = 10;
-            EdgeFilter.FilterImage(capturedImg);
+            for (double i = .1; i < 5; i += .1)
+            {
+
+                capturedImg = capture.QueryFrame();
+
+                capturedImg.Save("Original-" + i + ".jpg");
             
+
+                EdgeFilter.UseAverage = false;
+                EdgeFilter.Threshold = i;
+                EdgeFilter.Smooth = true;
+                EdgeFilter.OutOfBoundMask = 10;
+
+                Console.WriteLine("Testing with threshold " + i);
+                EdgeFilter.PastelFilterImage(capturedImg);
+            }
             Console.ReadKey();
         }
     }

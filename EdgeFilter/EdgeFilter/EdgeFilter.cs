@@ -85,6 +85,29 @@ namespace EdgeFilter
             Filter();
         }
 
+
+        public static void FilterImage(Image<Gray, Byte> img)
+        {
+            OriginalImage = img;
+            FilteredImage = img;
+            Filter();
+        }
+
+        public static void PastelFilterImage(Mat img)
+        {
+            OriginalImage = img.ToImage<Gray, Byte>();
+            FilteredImage = img.ToImage<Gray, Byte>();
+            PastelFilter();
+        }
+
+
+        public static void PastelFilterImage(Image<Gray, Byte> img)
+        {
+            OriginalImage = img;
+            FilteredImage = img;
+            PastelFilter();
+        }
+
         private static byte average = 0;
         private static byte max = 0;
         private static byte min = 0;
@@ -180,14 +203,7 @@ namespace EdgeFilter
             }
             average = (byte)(total / ((vEnd - vStart) * (hEnd - hStart)));
         }
-
-        public static void FilterImage(Image<Gray, Byte> img)
-        {
-            OriginalImage = img;
-            FilteredImage = img;
-            Filter();
-        }
-
+        
         public static void Filter()
         {
             Console.WriteLine("Begin filtering...\n");
@@ -222,6 +238,35 @@ namespace EdgeFilter
             Console.WriteLine("End smoothing...\n");
 
             FilteredImage.Save("Smoothed.jpg");
+        }
+
+        public static void PastelFilter()
+        {
+            Console.WriteLine("Begin filtering...\n");
+            byte value = 0;
+            byte threshold = 0;
+            for (int i = 0; i < OriginalImage.Rows; i++)
+            {
+                for (int j = 0; j < OriginalImage.Cols; j++)
+                {
+                    findAverage(i, j);
+                    value = average;
+
+                    threshold = (byte)(value * Threshold);
+                    OriginalImage.Data[i, j, 0] = (byte)((OriginalImage.Data[i, j, 0] < threshold) ? 255 : 0);
+                }
+            }
+            OriginalImage.Save("Filtered-" + Threshold + ".jpg");
+            Console.WriteLine("End filtering...\n");
+
+            FilteredImage = OriginalImage;
+
+            CvInvoke.PyrUp(FilteredImage, FilteredImage, Emgu.CV.CvEnum.BorderType.Default);
+            CvInvoke.PyrDown(FilteredImage, FilteredImage, Emgu.CV.CvEnum.BorderType.Default);
+
+            Console.WriteLine("End smoothing...\n");
+
+            FilteredImage.Save("Smoothed-" + Threshold + ".jpg");
         }
     }
 }
