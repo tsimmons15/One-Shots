@@ -48,9 +48,11 @@
     <Compile Include="Database\DatabaseConnection.cs" />
     <Compile Include="Database\DatabaseInteraction.cs" />
     <Compile Include="Entities\Attributes.cs" />
+    <Compile Include="Entities\Interfaces\IInteractable.cs" />
+    <Compile Include="Entities\Interfaces\IMobile.cs" />
+    <Compile Include="Entities\PlayerCharacter.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Item.cs" />
-    <Compile Include="Entities\Mobile.cs" />
     <Compile Include="Miscellaneous.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,8 +60,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SinglePlayer.Entities
+namespace SinglePlayer.Entities.Interfaces
 {
-    class Mobile
+    interface IInteractable
     {
     }
 }
