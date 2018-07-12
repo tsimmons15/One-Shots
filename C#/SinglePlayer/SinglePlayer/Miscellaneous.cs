@@ -19,5 +19,11 @@ namespace SinglePlayer
 
             return buff;
         }
+
+        public static string GenerateID()
+        {
+            Guid id = Guid.NewGuid();
+            return id.ToString("N");
+        }
     }
 }

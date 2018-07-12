@@ -1,16 +1,33 @@
-﻿using System;
+﻿using SinglePlayer.Entities.Interfaces;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SinglePlayer.Entities
 {
+
+    /// <summary>
+    /// An Entity is a "thing" in the environment. It's a physical entity (see what I did there?)
+    /// An entity is the root-class for a number of classes, such as Item and Entity, among others, but they will all 
+    /// represent things which can be interacted with.
+    /// </summary>
     class Entity
     {
         public string EntityID
         {
             get;
+            private set;
+        }
+
+        public List<Component> Components
+        {
+            get;
+            private set;
+        }
+
+        public List<IComponent> Interfaces
+        {
+            get;
+            private set;
         }
 
         /// <summary>
@@ -19,7 +36,9 @@ namespace SinglePlayer.Entities
         /// </summary>
         public Entity()
         {
-            this.EntityID = GenerateID();
+            this.EntityID = "entity" + Miscellaneous.GenerateID();
+            this.Components = new List<Component>();
+            this.Interfaces = new List<IComponent>();
         }
 
         private string GenerateID()

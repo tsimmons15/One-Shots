@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using SinglePlayer.Entities;
+using SinglePlayer.Entities.Interfaces;
 
 namespace SinglePlayer
 {
@@ -12,16 +8,9 @@ namespace SinglePlayer
     {
         static void Main(string[] args)
         {
-            testEntity();
-
-
+            Item item = new Item();
+            item.Name = "";
             Console.ReadKey();
-        }
-
-        static void testEntity()
-        {
-            PlayerCharacter entity = new PlayerCharacter();
-            Console.WriteLine(entity.EntityID);
         }
     }
 }
