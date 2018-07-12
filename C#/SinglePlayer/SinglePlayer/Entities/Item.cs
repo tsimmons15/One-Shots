@@ -27,6 +27,7 @@ namespace SinglePlayer.Entities
         public string Description { get; set; }
 
 
+
         /// <summary>
         /// Default Constructor
         /// Sets up any default Item specifics
