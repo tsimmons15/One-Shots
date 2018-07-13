@@ -63,11 +63,11 @@
     <Compile Include="Database\DatabaseConnection.cs" />
     <Compile Include="Database\DatabaseInteraction.cs" />
     <Compile Include="Entities\Attributes.cs" />
+    <Compile Include="Entities\Character.cs" />
     <Compile Include="Entities\Component.cs" />
     <Compile Include="Entities\Interfaces\IComponent.cs" />
     <Compile Include="Entities\Interfaces\IInteractable.cs" />
     <Compile Include="Entities\Interfaces\IMobile.cs" />
-    <Compile Include="Entities\PlayerCharacter.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Item.cs" />
     <Compile Include="Miscellaneous.cs" />

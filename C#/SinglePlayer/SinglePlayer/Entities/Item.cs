@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SinglePlayer.Entities.Interfaces;
+using System;
 
 namespace SinglePlayer.Entities
 {
@@ -12,7 +9,7 @@ namespace SinglePlayer.Entities
     /// 
     /// <para>Another group of Items is Scenery, which is just an Item without an ability to moved/move, so it lacks an IMobile</para>
     /// </summary>
-    class Item : Entity
+    class Item : Entity, IInteractable
     {
         /// <summary>
         /// <para>The natural-language name of an item, not the ID of the item</para>
@@ -34,7 +31,17 @@ namespace SinglePlayer.Entities
         /// </summary>
         public Item()
         {
-            
+
+        }
+
+        public void CommandReceived(string command)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string CommandSent()
+        {
+            throw new NotImplementedException();
         }
     }
 }

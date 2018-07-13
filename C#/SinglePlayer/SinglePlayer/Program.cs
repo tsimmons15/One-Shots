@@ -8,8 +8,11 @@ namespace SinglePlayer
     {
         static void Main(string[] args)
         {
-            Item item = new Item();
-            item.Name = "";
+            Item item = new Item
+            {
+                Name = "Trt"
+            };
+            Console.WriteLine("The item's name is: " + item.Name);
             Console.ReadKey();
         }
     }
